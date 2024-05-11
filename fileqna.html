@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Q&A</title>
+</head>
+<body>
+    <h1>File Q&A</h1>
+    <form action="/fileqna" method="post" enctype="multipart/form-data">
+        <label for="pdf_file">Upload PDF File:</label>
+        <input type="file" name="pdf_file" id="pdf_file" required>
+        <br>
+        <label for="question">Enter Your Question:</label>
+        <input type="text" name="question" id="question" required>
+        <br>
+        <button type="submit">Ask Question</button>
+    </form>
+    <hr>
+    {% if answer %}
+    <div>
+        <h2>Answer:</h2>
+        <p>{{ answer }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
